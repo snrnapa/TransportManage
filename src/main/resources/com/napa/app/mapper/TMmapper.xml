@@ -3,7 +3,14 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.napa.app.mapper.TMmapper">
+
   <select id="selectAll" resultType="com.napa.app.entity.Transportentity">
     select * from worker
   </select>
+  
+    <select id="selectfeeinfo" resultType="com.napa.app.entity.Transportentity">
+    select * from fee　where id = #{id}
+    </select>
+  
+  
 </mapper>
