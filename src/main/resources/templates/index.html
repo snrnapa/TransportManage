@@ -14,10 +14,10 @@
 <form method="post" th:action="@{/oneresult}" th:each="workerlist : ${workers}">
 
 
-	      <input disabled th:value="${workerlist.id}"/>
+	      <input disabled name='id' th:value="${workerlist.id}"/>
 	      <input disabled th:value="${workerlist.first_name}"/>
 	      <input disabled th:value="${workerlist.last_name}"/>
-	      <input type="submit" value="output">	      
+	      <input type="submit" value="Output">	      
 	      
 	      <br>
 </form>

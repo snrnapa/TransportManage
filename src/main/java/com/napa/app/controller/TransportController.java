@@ -9,25 +9,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.napa.app.entity.Transportentity;
 import com.napa.app.form.Workerform;
-import com.napa.app.mapper.TMmapper;
+import com.napa.app.service.feeservice;
 
 @Controller
 public class TransportController {
 	
 	@Autowired
-	TMmapper tmmapper;
+	feeservice fservice;
+
+	
 	
 	@RequestMapping(value = "/")
 	public String index(Model model) {
-		List <Transportentity> list = tmmapper.selectAll();
+		List <Transportentity> list = fservice.selectWorkerAll();
 		model.addAttribute("workers",list);
 		return "index";
 	}
 	
 	@RequestMapping(value = "/oneresult")
 	public String result(Workerform workerform , Model model) {
-		List<Transportentity> transportentity = tmmapper.selectfeeinfo(workerform.getId());
-		model.addAttribute("result",resultlist);
+		Transportentity transportentity = fservice.selectfeeinfo(workerform.getId());
+		model.addAttribute("result" , transportentity);
 		return "oneresult";
 	}
 

@@ -9,7 +9,7 @@
   </select>
   
     <select id="selectfeeinfo" resultType="com.napa.app.entity.Transportentity">
-    select * from fee　where id = #{id}
+    select * from fee where id = #{id}
     </select>
   
   

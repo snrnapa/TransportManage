@@ -1,5 +1,7 @@
 package com.napa.app.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,10 @@ public class feeservice {
 		Transportentity transportentity = new Transportentity();
 		transportentity.setId(id);
 		return this.tmmapper.selectfeeinfo(transportentity);
+	}
+	
+	public List<Transportentity> selectWorkerAll(){
+		return this.tmmapper.selectAll();
 	}
 
 	
